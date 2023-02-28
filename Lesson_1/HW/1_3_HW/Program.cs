@@ -4,7 +4,7 @@ if ((a % 2) == 0)
 {
     Console.Write($"{a} " + "четное число");
 }
-else if((a % 2) != 0)
+else
 {
     Console.Write($"{a} " + "нечетное число");
 }
