@@ -1,15 +1,14 @@
 ﻿//Напишите программу, которая выводит случайное трехзначное число и удаляет вторую цифру этого числа.
 
-Console.WriteLine("Введите число");
-int x = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите позицию");
-int s = Convert.ToInt32(Console.ReadLine());
-int m = 1;
-while (s > 1) {
-     m *= 10;
-     s--;
+string GetSumNum(int num){
+//     Console.WriteLine(num);
+    if((-1000 < num && num < -99) || (num < 1000 && num > 99)){
+       var numOne = $"{num / 100}"; 
+       var numTwo = $"{num % 10}";
+       string numOut =  string.Concat(numOne, numTwo);
+       return numOut;
+    }
+    return "Число не трехзначное";
 }
-int t = (x % m) + (x / (m * 10)) * m;
-Console.WriteLine(t);
 
-
+Console.WriteLine(GetSumNum(int.Parse(Console.ReadLine()!)));
