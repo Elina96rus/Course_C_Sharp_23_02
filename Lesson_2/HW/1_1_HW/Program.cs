@@ -3,10 +3,11 @@
 //782 -> 8
 //918 -> 1
 
-int TakeNum(int num){
-    Console.WriteLine(num);
-    return (num / 10) % 10;
+string GetNum(int num){
+    if((-1000 < num && num < -100) || (num < 1000 && num > 100)){
+        return $"{num / 10 % 10}";
+    }
+    return "Число не трехзначное";
 }
-
-int result = TakeNum(new Random().Next(100, 1000));
-Console.WriteLine(result);
+Console.WriteLine("Введите ваше число: ");
+Console.WriteLine(GetNum(int.Parse(Console.ReadLine()!)));
